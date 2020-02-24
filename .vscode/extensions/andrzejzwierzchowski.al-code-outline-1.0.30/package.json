@@ -1,0 +1,328 @@
+{
+	"name": "al-code-outline",
+	"displayName": "AZ AL Dev Tools/AL Code Outline",
+	"description": "AZ AL Development Tools: AL code outline, object browser, object creators",
+	"version": "1.0.30",
+	"publisher": "andrzejzwierzchowski",
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"author": {
+		"name": "Andrzej Zwierzchowski",
+		"url": "https://anzwdev.wordpress.com/"
+	},
+	"repository": {
+		"url": "https://github.com/anzwdev/al-code-outline"
+	},
+	"license": "MIT",
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"al"
+	],
+	"activationEvents": [
+		"onLanguage:al",
+		"onLanguage:alapp",
+		"onView:azALDevTools_SymbolsTreeProvider",
+		"onCommand:azALDevTools.viewALApp",
+		"onCommand:azALDevTools.viewActionImages",
+		"onCommand:azALDevTools.showAllProjectSymbols",
+		"onCommand:azALDevTools.showProjectSymbolsWithoutDep",
+		"onCommand:azALDevTools.refreshOutlineView",
+		"onCommand:azALDevTools.newALFile",
+		"onCommand:azALDevTools.showDocumentSymbols",
+		"onCommand:azALDevTools.goToDefinitionSymbolTree",
+		"onCommand:azALDevTools.showSyntaxTree",
+		"onCommand:azALDevTools.showCodeAnalyzers",
+		"onCommand:azALDevTools.AddEditorApplicationAreas",
+		"onCommand:azALDevTools.AddProjectApplicationAreas"
+	],
+	"main": "./out/extension",
+	"icon": "resources/alcodeoutline.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "alapp",
+				"extensions": [
+					".app"
+				]
+			}
+		],
+		"views": {
+			"explorer": [
+				{
+					"id": "azALDevTools_SymbolsTreeProvider",
+					"name": "AL Outline"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "azALDevTools.viewALApp",
+				"title": "Open in AL Object Browser"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.showDocumentSymbols",
+				"title": "Show Document Symbols Tree"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.showSyntaxTree",
+				"title": "Open Document Syntax Visualizer"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.showCodeAnalyzers",
+				"title": "Show Code Analyzers Rules"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.goToDefinitionSymbolTree",
+				"title": "Show Definition in the Symbols Tree"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.viewActionImages",
+				"title": "Show Action Images"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.showAllProjectSymbols",
+				"title": "Show All Project Symbols"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.showProjectSymbolsWithoutDep",
+				"title": "Show Project Symbols without Dependencies"
+			},
+			{
+				"command": "azALDevTools.refreshOutlineView",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/images/light/refresh.svg",
+					"dark": "resources/images/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "alOutline.createListPage",
+				"title": "Create List Page"
+			},
+			{
+				"command": "alOutline.createCardPage",
+				"title": "Create Card Page"
+			},
+			{
+				"command": "alOutline.createReport",
+				"title": "Create Report"
+			},
+			{
+				"command": "alOutline.createXmlPort",
+				"title": "Create XmlPort"
+			},
+			{
+				"command": "alOutline.createQuery",
+				"title": "Create Query"
+			},
+			{
+				"command": "alOutline.runPage",
+				"title": "Run in Web Client"
+			},
+			{
+				"command": "alOutline.runReport",
+				"title": "Run in Web Client"
+			},
+			{
+				"command": "alOutline.runTable",
+				"title": "Run in Web Client"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.newALFile",
+				"title": "New AL File Wizard"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.AddEditorApplicationAreas",
+				"title": "Add Application Areas to the Active Editor"
+			},
+			{
+				"category": "AZ AL Dev Tools",
+				"command": "azALDevTools.AddProjectApplicationAreas",
+				"title": "Add Application Areas to the Active Project"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "azALDevTools.refreshOutlineView",
+					"when": "view == azALDevTools_SymbolsTreeProvider",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "alOutline.runPage",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == PageObject"
+				},
+				{
+					"command": "alOutline.runReport",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == ReportObject"
+				},
+				{
+					"command": "alOutline.runTable",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				},
+				{
+					"command": "alOutline.createCardPage",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				},
+				{
+					"command": "alOutline.createListPage",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				},
+				{
+					"command": "alOutline.createReport",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				},
+				{
+					"command": "alOutline.createXmlPort",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				},
+				{
+					"command": "alOutline.createQuery",
+					"when": "view == azALDevTools_SymbolsTreeProvider && viewItem == TableObject"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "azALDevTools.viewALApp",
+					"group": "navigation",
+					"when": "resourceLangId == alapp"
+				},
+				{
+					"command": "azALDevTools.newALFile",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "azALDevTools.showDocumentSymbols"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "azALDevTools.goToDefinitionSymbolTree",
+					"when": "resourceLangId == al",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "AZ AL Dev Tools/AL Code Outline",
+				"properties": {
+					"alOutline.docCommentsType": {
+						"type": "string",
+						"default": "xml",
+						"enum": [
+							"none",
+							"xml"
+						],
+						"description": "Documentation comments type"
+					},
+					"alOutline.autoGenerateFiles": {
+						"type": "boolean",
+						"default": false,
+						"description": "Automatically generate files for newly created objects."
+					},
+					"alOutline.autoGenerateFileDirectory": {
+						"type": "string",
+						"default": "",
+						"description": "The default directory to create files in, relative to the root directory (e.g., \"Source\\<ObjectType>\")."
+					},
+					"alOutline.autoShowFiles": {
+						"type": "boolean",
+						"default": true,
+						"description": "Automatically show any newly created files in the editor."
+					},
+					"alOutline.defaultAppArea": {
+						"type": "string",
+						"default": "All",
+						"description": "Default application area for page code generator"
+					},
+					"alOutline.defaultListUsageCategory": {
+						"type": "string",
+						"default": "Lists",
+						"description": "Default usage category for list pages"
+					},
+					"alOutline.promptForObjectId": {
+						"type": "boolean",
+						"default": true,
+						"description": "When generating a new object, ask the user to input the object ID."
+					},
+					"alOutline.promptForObjectName": {
+						"type": "boolean",
+						"default": true,
+						"description": "When generating a new object, ask the user to input the object name."
+					},
+					"alOutline.promptForFilePath": {
+						"type": "boolean",
+						"default": false,
+						"description": "When generating a new file, ask the user to specify a path relative to the root of the project-folder."
+					},
+					"alOutline.stripNonAlphanumericCharactersFromObjectNames": {
+						"type": "boolean",
+						"default": false,
+						"description": "Always strip non-alphanumeric characters from generated object names."
+					},
+					"alOutline.webClientPort": {
+						"type": "number",
+						"default": "0",
+						"description": "Web Client port. Enter 0 to use default http/https port number."
+					},
+					"alOutline.openDefinitionInNewTab": {
+						"type": "boolean",
+						"default": false,
+						"description": "Always open objects definitions in a new tab."
+					},
+					"alOutline.fieldsSelectionOrder": {
+						"type": "string",
+						"default": "selection order",
+						"enum": [
+							"alphabetic",
+							"selection order"
+						]
+					}
+				}
+			}
+		]
+	},
+	"extensionDependencies": [
+		"waldo.crs-al-language-extension"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.25",
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.34"
+	},
+	"dependencies": {
+		"adm-zip": "^0.4.11",
+		"opn": "^5.4.0",
+		"vscode-languageclient": "^5.2.1"
+	},
+	"__metadata": {
+		"id": "81ea9457-e7f8-432d-9d6d-179c035dc24e",
+		"publisherId": "3769bdbf-c2b5-4873-9790-29d57931f50e",
+		"publisherDisplayName": "Andrzej Zwierzchowski"
+	}
+}

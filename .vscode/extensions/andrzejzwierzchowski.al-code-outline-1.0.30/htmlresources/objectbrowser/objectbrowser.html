@@ -1,0 +1,90 @@
+<html>
+    <header>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/jquery/jquery.min.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/jquery-ui-position/jquery.ui.position.min.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/jquery-context-menu/js/jquery.contextmenu.min.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/jquery-multiselect/jquery.multiselect.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/filtercompiler/filterCompiler.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/lib/azgridview/azgridview.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/alsymbolsbrowser/js/alsymbolkind.js"></script>
+        <script src="##EXTENSIONPATH##/htmlresources/objectbrowser/js/objectbrowser.js"></script>
+        <link rel="stylesheet" type="text/css" href="##EXTENSIONPATH##/htmlresources/lib/jquery-context-menu/css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="##EXTENSIONPATH##/htmlresources/lib/jquery-multiselect/jquery.multiselect.css">
+        <link rel="stylesheet" type="text/css" href="##EXTENSIONPATH##/htmlresources/lib/styles/default.css">
+        <link rel="stylesheet" type="text/css" href="##EXTENSIONPATH##/htmlresources/lib/azgridview/azgridview.css">
+        <link rel="stylesheet" type="text/css" href="##EXTENSIONPATH##/htmlresources/objectbrowser/css/objectbrowser.css">
+    </header>
+    <body style="margin:0;padding:0;">
+        <div id="search" class="search">
+            <select id="searchtype" name="searchtype" class="searchinput" tabindex="1" multiple="multiple">
+                <option value="Table">Tables</option>
+                <option value="Page">Pages</option>
+                <option value="Report">Reports</option>
+                <option value="XmlPort">Xml Ports</option>
+                <option value="Query">Queries</option>
+                <option value="Codeunit">Codeunits</option>
+                <option value="ControlAddIn">Control Add-Ins</option>
+                <option value="PageExtension">Page Extensions</option>
+                <option value="TableExtension">Table Extensions</option>
+                <option value="Profile">Profiles</option>
+                <option value="PageCustomization">Page Customizations</option>
+                <option value="Enum">Enums</option>
+                <option value="DotNetPackage">DotNet Packages</option>
+            </select>
+            <input type="text" id="searchid" name="searchid" class="searchinput" tabindex="3" placeholder="Id filter, e.g., 22, 10..50, &gt;20&amp;&lt;30">
+            <input type="text" id="searchname" name="searchname" class="searchinput" tabindex="3" placeholder="Name filter, e.g., *Item*, *Customer*">
+            <button class="btn" id="searchbtn" tabindex="4">Search</button>
+            <button class="btn" id="treebtn" tabindex="5">Tree View</button>
+        </div>
+        <div class="content">
+            <div class="types">
+                    <div class="btnArea">
+                        <div id="tableModeBtn" class="btn btnstd" tabindex="5" data-mode="Table">Tables</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="pageModeBtn" class="btn btnstd" tabindex="6" data-mode="Page">Pages</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="reportModeBtn" class="btn btnstd" tabindex="7" data-mode="Report">Reports</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="xmlportModeBtn" class="btn btnstd" tabindex="8" data-mode="XmlPort">Xml Ports</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="queryModeBtn" class="btn btnstd" tabindex="9" data-mode="Query">Queries</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="codeunitModeBtn" class="btn btnstd" tabindex="10" data-mode="Codeunit">Codeunits</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="contoladdinModeBtn" class="btn btnstd" tabindex="11" data-mode="ControlAddIn">Control Add-Ins</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="pageextensionModeBtn" class="btn btnstd" tabindex="12" data-mode="PageExtension">Page Extensions</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="tableextensionModeBtn" class="btn btnstd" tabindex="13" data-mode="TableExtension">Table Extensions</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="profileModeBtn" class="btn btnstd" tabindex="14" data-mode="Profile">Profiles</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="pagecustomizationModeBtn" class="btn btnstd" tabindex="15" data-mode="PageCustomization">Page Customizations</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="enumModeBtn" class="btn btnstd" tabindex="16" data-mode="Enum">Enums</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="dotnetpackageModeBtn" class="btn btnstd" tabindex="17" data-mode="DotNetPackage">DotNet Packages</div>
+                    </div>
+                    <div class="btnArea">
+                        <div id="allModeBtn" class="btn btnstd" tabindex="18" data-mode="All">All</div>
+                    </div>
+                </div>
+        
+                <div id="objects" tabindex="19">
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

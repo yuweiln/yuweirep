@@ -1,0 +1,78 @@
+{
+    "Snippet: Report": {
+        "prefix": "treport(waldo)",
+        "body": [
+            "report ${1:Id} ${2:MyReport}",
+            "{",
+            "\tCaption = '${3:ReportName}';",
+            "\tUsageCategory = ${4|Administration,Documents,History,Lists,None,ReportsAndAnalysis,Tasks|};",
+            "\tApplicationArea = ${5|All,Basic,Suite,Advanced|};",
+            "\t",
+            "\tdataset",
+            "\t{",
+            "\t\tdataitem(${6:DataItemName; SourceTableName})",
+            "\t\t{",
+            "\t\t\tcolumn(${9:ColumnName; SourceFieldName})",
+            "\t\t\t{",
+            "\t\t\t\t${10}",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "\t",
+            "\trequestpage",
+            "\t{",
+            "\t\tlayout",
+            "\t\t{",
+            "\t\t\tarea(Content)",
+            "\t\t\t{",
+            "\t\t\t\tgroup(${11:GroupName})",
+            "\t\t\t\t{",
+            "\t\t\t\t\tfield(${13:Name}; ${12:SourceExpression})",
+            "\t\t\t\t\t{",
+            "\t\t\t\t\t\tApplicationArea = ${5};",
+            "\t\t\t\t\t\t${14}",
+            "\t\t\t\t\t}",
+            "\t\t\t\t}",
+            "\t\t\t}",
+            "\t\t}",
+            "\t",
+            "\t\tactions",
+            "\t\t{",
+            "\t\t\tarea(${15:processing})",
+            "\t\t\t{",
+            "\t\t\t\taction(${16:ActionName})",
+            "\t\t\t\t{",
+            "\t\t\t\t\tApplicationArea = ${5};",
+            "\t\t\t\t\t${17}",
+            "\t\t\t\t}",
+            "\t\t\t}",
+            "\t\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "Snippet: Report"
+    },
+    "Snippet: Data Item": {
+        "prefix": "tdataitem(waldo)",
+        "body": [
+            "dataitem(${1:DataItemName}; ${2:SourceTableName})",
+            "{",
+            "\tcolumn(${3:ColumnName}; ${4:SourceFieldName})",
+            "\t{",
+            "\t\t${0}",
+            "\t}",
+            "}"
+        ],
+        "description": "Snippet: Report Data Item"
+    },
+    "Snippet: Column": {
+        "prefix": "tcolumn(waldo)",
+        "body": [
+            "column(${1:ColumnName}; ${2:SourceFieldName})",
+            "{",
+            "\t${0}",
+            "}"
+        ],
+        "description": "Snippet: Column"
+    }
+}

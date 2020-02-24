@@ -1,0 +1,50 @@
+{
+    "Snippet: Repeat Until": {
+        "prefix": "trepeat(waldo)",
+        "body": [
+            "if ${1:Rec}.FindSet() then begin",
+            "\trepeat",
+            "\t$0",
+            "\tuntil ${1:Rec}.Next() < 1;",
+            "end;"
+        ],
+        "description": "Snippet: if findset repeat until"
+    },
+    "Snippet (waldo): Declare a variable ": {
+        "description": "Snippet (waldo): Declare a variable",
+        "prefix": "tvar(waldo)",
+        "body": [
+            "${3:VariableName}: ${1:Type} ${2:Subtype};",
+            "${0}"
+        ]
+    },
+    "Snippet (waldo): Field Groups": {
+        "description": "Snippet (waldo): Add Field Groups section",
+        "prefix": "tfieldgroups(waldo)",
+        "body": [
+            "fieldgroups",
+            "{",
+            "\tfieldgroup(${1|DropDown,Brick|}; ${2:AddFieldsHere}) { }",
+            "}"
+        ]
+    },
+    "Snippet (waldo): Field Group": {
+        "description": "Snippet (waldo): Add Field Group",
+        "prefix": "tfieldgroup(waldo)",
+        "body": [
+            "fieldgroup(${1|DropDown,Brick|}; ${2:AddFieldsHere}) { }"
+        ]
+    },
+    "Snippet (waldo): Codeunit with proc": {
+        "description": "Snippet (waldo): Procedure from clipboard",
+        "prefix": "tProcedureFromClipboard(waldo)",
+        "body": [
+            "local procedure ${1:ProcedureName}()",
+            "begin",
+            "\t${CLIPBOARD}",
+            "end;",
+            "",
+            "${0}"
+        ]
+    }
+}

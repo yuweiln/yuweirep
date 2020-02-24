@@ -1,0 +1,13 @@
+      xxx// TODO Some comment
+      // TO\DO Some comment
+      // FIXME Some comment
+      // !TODO Some comment
+      // ? Should I reformat this?
+      // ^ Some comment
+      //+ Some comment
+
+
+      - [ ] Do Something
+      - [ ] Do Something
+      - [ ] Do Something
+      - [ ] Something else

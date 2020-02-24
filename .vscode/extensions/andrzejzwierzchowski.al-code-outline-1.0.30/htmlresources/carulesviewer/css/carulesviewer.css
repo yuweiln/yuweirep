@@ -1,0 +1,16 @@
+#searchanalyzers {
+    flex: 1 1 25%;
+}
+#searchseverity {
+    flex: 1 1 15%;
+}
+#searchid {
+    flex: 1 1 15%;
+}
+#searchtitle {
+    flex: 1 1 45%;
+}
+#rules {
+    flex: 1 1 auto;
+    border: 1px solid var(--vscode-panel-border);
+}
